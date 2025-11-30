@@ -63,7 +63,6 @@ Each job card displays:
 DevJobs/
 │── index.html       # Main page
 │── style.css        # Stylesheet
-│── script.js        # (Optional) filtering + interactivity
 └── README.md
 ```
 
