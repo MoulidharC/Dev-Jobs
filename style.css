@@ -1,0 +1,634 @@
+/* ---------- Variables ---------- */
+:root {
+  --bg: #0b0c0d; /* near black */
+  --panel: #111215; /* slightly lighter panel */
+  --card: #151619; /* card background */
+  --muted: #9aa0a6;
+  --text: #e6eef6;
+  --subtext: #b8c2c9;
+  --accent: #00ff7a; /* neon green accent */
+  --accent-weak: rgba(0, 255, 122, 0.08);
+  --glass: rgba(255, 255, 255, 0.02);
+  --focus: rgba(0, 255, 122, 0.25);
+  --max-width: 1200px;
+  --sidebar-w: 300px;
+  --radius: 12px;
+  --transition: 200ms ease;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Global ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, #070708 100%);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Nice max width container for main content */
+main {
+  max-width: var(--max-width);
+  margin: 28px auto;
+  padding: 0 18px 80px;
+}
+
+/* ---------- Header ---------- */
+header {
+  width: 100%;
+  background: linear-gradient(180deg, var(--panel), rgba(255, 255, 255, 0.01));
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  justify-content: space-between;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+/* Brand */
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+}
+.brand-container i {
+  font-size: 22px;
+  display: inline-grid;
+  place-items: center;
+}
+.brand-container h3 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+  color: var(--text);
+}
+
+/* Nav */
+nav {
+  flex: 1;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 0;
+  justify-content: center;
+}
+
+nav ul li a {
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+}
+
+nav a {
+  color: var(--subtext);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: var(--transition);
+  margin-left: 25px;
+  font-size: 0.95rem;
+}
+nav a:hover,
+nav a:focus {
+  color: var(--text);
+  background: var(--glass);
+  outline: none;
+}
+
+/* Auth buttons */
+.logout-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.logout-section .btn {
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: var(--text);
+}
+.logout-section .btn-primary {
+  background: linear-gradient(90deg, var(--accent), #16ffd6);
+  color: #051014;
+  border: none;
+}
+.logout-section .btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logout-section button {
+  margin-left: 8px;
+}
+
+/* Focus visible for keyboard navigation */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ---------- Hero / Search ---------- */
+#search-jobs {
+  margin-top: 26px;
+  padding: 50px 20px;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.015),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+#search-jobs h1 {
+  margin: 0 0 6px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+#search-jobs p {
+  color: var(--subtext);
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+/* Search Input */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  max-width: 650px;
+  margin: auto;
+}
+.search-container i {
+  color: var(--muted);
+}
+.search-container input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-size: 15px;
+  padding: 8px 0;
+  width: 100%;
+  outline: none;
+}
+.search-container input::placeholder {
+  color: var(--muted);
+}
+
+/* ---------- Layout: Filters + Jobs ---------- */
+.filters-jobs {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  gap: 22px;
+  margin-top: 22px;
+  align-items: start;
+  padding: 20px 40px;
+
+  display: flex;
+}
+
+/* Sidebar / Filters */
+.filter-section {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.008)
+  );
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  min-height: 220px;
+
+  width: 260px;
+
+  height: max-content;
+}
+
+/* Filter header */
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.filter-heading {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.filter-heading i {
+  color: var(--accent);
+  font-size: 18px;
+}
+.filter-heading h5 {
+  margin: 0;
+  color: var(--text);
+}
+.clear-btn {
+  background: transparent;
+  color: var(--subtext);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-size: 12px;
+}
+.clear-btn:hover {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+}
+
+/* Filter items */
+.filter-item {
+  margin-top: 8px;
+  color: var(--subtext);
+}
+.filter-item h6 {
+  color: var(--text);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+/* Inputs and labels - stack vertically with spacing */
+.filter-item input[type="checkbox"] {
+  accent-color: var(--accent);
+  margin-right: 8px;
+  vertical-align: middle;
+  transform: translateY(1px);
+}
+
+/* Make labels appear clickable and accessible */
+.filter-item label {
+  cursor: pointer;
+  color: var(--subtext);
+  margin-right: 6px;
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: var(--transition);
+  user-select: none;
+}
+.filter-item label:hover {
+  background: rgba(255, 255, 255, 0.008);
+  color: var(--text);
+}
+
+/* Visually highlight checked filters using adjacent sibling selector */
+.filter-item input[type="checkbox"]:checked + label {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 122, 0.08),
+    rgba(0, 255, 122, 0.03)
+  );
+  color: var(--accent);
+  border: 1px solid rgba(0, 255, 122, 0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 255, 122, 0.04);
+}
+
+/* If HTML uses line breaks, allow label to follow input (we already rely on input + label) */
+
+/* ---------- Jobs Section ---------- */
+.jobs-section {
+  min-height: 200px;
+  display: block;
+  flex: 1;
+}
+.jobs-section > p {
+  margin: 0 0 16px;
+  color: var(--subtext);
+  font-weight: 600;
+}
+
+/* Grid of job cards: use auto-fit for responsiveness */
+.jobs-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* Job Card */
+.job {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
+  margin-bottom: 25px;
+}
+.job:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75);
+  border-color: rgba(0, 255, 122, 0.08);
+}
+
+/* Job header */
+.job-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.job-header i {
+  font-size: 28px;
+  color: var(--accent);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 122, 0.06),
+    rgba(0, 255, 122, 0.02)
+  );
+  padding: 12px;
+  border-radius: 10px;
+}
+.job-role h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.job-role p {
+  margin: 2px 0 0;
+  color: var(--subtext);
+  font-size: 0.9rem;
+}
+
+/* Job details row */
+.job-details {
+  display: flex;
+  gap: 15px 25px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+.job-details span {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 8px;
+  color: var(--subtext);
+}
+
+/* Tech tag chips */
+.tech-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  margin-top: 18px;
+}
+.tech-tag {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-weak),
+    rgba(255, 255, 255, 0.01)
+  );
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
+  border: 1px solid rgba(0, 255, 122, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 255, 122, 0.03);
+}
+
+/* Job footer */
+.job-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 18px;
+}
+.job-footer span {
+  color: var(--subtext);
+  font-size: 13px;
+}
+
+/* Apply button inside card */
+.job-footer .btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  background: linear-gradient(90deg, var(--accent), #16ffd6);
+  color: #031014;
+}
+.job-footer .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 255, 122, 0.12);
+}
+
+/* HR inside cards */
+.job hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  margin: 0;
+  opacity: 0.6;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .filters-jobs {
+    flex-direction: row;
+  }
+  .filter-section {
+    order: 1;
+    margin-top: 10px;
+    width: 44%;
+  }
+  .jobs-section {
+    order: 1;
+  }
+  header nav ul {
+    justify-content: space-around;
+  }
+  .brand-container h3 {
+    font-size: 18px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 520px) {
+  .brand-container h3 {
+    display: none;
+  } /* keep icon only on small screens */
+  .logout-section .btn {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  #search-jobs h1 {
+    font-size: 20px;
+  }
+  .search-container {
+    padding: 8px;
+  }
+  .job-role h3 {
+    font-size: 16px;
+  }
+  .jobs-section {
+    gap: 12px;
+  }
+
+  .filters-jobs {
+    flex-direction: column;
+  }
+  .filter-section {
+    width: 100%;
+  }
+}
+
+/* Focus styles for buttons, links, inputs */
+button:focus,
+a:focus,
+input:focus {
+  box-shadow: 0 6px 18px var(--focus);
+  border-radius: 8px;
+}
+
+/* Make checkbox hit area larger */
+.filter-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* High contrast mode hint (simple) */
+@media (prefers-contrast: more) {
+  :root {
+    --text: #ffffff;
+    --subtext: #d6e6df;
+  }
+}
+
+.job-header .job-tile-logo i.fa-building {
+  font-size: 42px;
+  background: rgba(59, 130, 246, 0.15);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Check alignment: building + text */
+.job-header > *:nth-child(1),
+.job-header > *:nth-child(2) {
+  display: flex;
+  gap: 12px;
+}
+
+/* Save Icon */
+.job-header span {
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--text-muted);
+  transition: 0.2s ease;
+}
+
+.job-header span:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.job-details i {
+  margin-right: 6px;
+}
+
+.job-footer button {
+  padding: 8px 18px;
+}
+
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+    padding: 10px 10px;
+  }
+
+  nav a {
+    margin-left: 4px;
+  }
+
+  nav ul li a {
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding: 0px;
+    margin: 2px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .search-container {
+    width: 90%;
+  }
+
+  .job {
+    padding: 15px;
+  }
+
+  .job-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .job-footer {
+    align-items: center;
+  }
+}

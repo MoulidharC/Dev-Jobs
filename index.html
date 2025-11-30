@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>Dev Jobs</title>
+        <meta name="description"
+            content="A job portal for developers to find and apply for jobs.">
+        <meta name="keywords" content="HTML, CSS">
+        <meta name="author" content="Moulidhar">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <header>
+            <div class="brand-container">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>DevJobs</h3>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#find-jobs">Find Jobs</a></li>
+                    <li><a href="#post-job">Post a Job</a></li>
+                    <li><a href="#companies">Companies</a></li>
+                </ul>
+            </nav>
+
+            <div class="logout-section">
+                <button class="btn btn-primary">Log In</button>
+                <button class="btn btn-secondary">Sign Up</button>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- Hero Search Section -->
+            <section id="search-jobs">
+                <h1>Find Your Dream Job</h1>
+                <p>Discover opportunities from companies around the world</p>
+
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input id="search" type="text"
+                        placeholder="Search for jobs by title, company, or keywords">
+                </div>
+            </section>
+
+            <!-- Filters + Job Listing Wrapper -->
+            <section class="d-flex filters-jobs">
+
+                <!-- Sidebar Filters -->
+                <aside class="filter-section">
+                    <div class="filter-header">
+                        <div class="filter-heading">
+                            <i class="fa-solid fa-filter"></i>
+                            <h5>Filters</h5>
+                        </div>
+                        <button class="btn clear-btn">Clear All</button>
+                    </div>
+
+                    <div class="filter-item">
+                        <h6>Role</h6>
+
+                        <input type="checkbox" id="frontend" name="role">
+                        <label for="frontend">Frontend Developer</label><br>
+
+                        <input type="checkbox" id="backend" name="role">
+                        <label for="backend">Backend Developer</label><br>
+
+                        <input type="checkbox" id="fullstack" name="role">
+                        <label for="fullstack">Fullstack Developer</label><br>
+
+                        <input type="checkbox" id="devops" name="role">
+                        <label for="devops">DevOps Engineer</label><br>
+
+                        <input type="checkbox" id="ui-ux" name="role">
+                        <label for="ui-ux">UI/UX Designer</label><br>
+                    </div>
+
+                    <hr>
+
+                    <div class="filter-item">
+                        <h6>Tech Stack</h6>
+
+                        <input type="checkbox" id="react">
+                        <label for="react">React</label><br>
+
+                        <input type="checkbox" id="typescript">
+                        <label for="typescript">TypeScript</label><br>
+
+                        <input type="checkbox" id="nodejs">
+                        <label for="nodejs">Node.js</label><br>
+
+                        <input type="checkbox" id="python">
+                        <label for="python">Python</label><br>
+
+                        <input type="checkbox" id="aws">
+                        <label for="aws">AWS</label><br>
+
+                        <input type="checkbox" id="Docker">
+                        <label for="Docker">Docker</label><br>
+
+                        <input type="checkbox" id="mongodb">
+                        <label for="mongodb">Mongo DB</label><br>
+
+                        <input type="checkbox" id="postgresql">
+                        <label for="postgresql">PostgreSQL</label><br>
+
+                        <input type="checkbox" id="html-css">
+                        <label for="html-css">HTML5 / CSS</label><br>
+                    </div>
+
+                    <div class="filter-item">
+                        <h6>Location</h6>
+
+                        <input type="checkbox" id="remote">
+                        <label for="remote">Remote</label><br>
+
+                        <input type="checkbox" id="new-york">
+                        <label for="new-york">New York</label><br>
+
+                        <input type="checkbox" id="san-francisco">
+                        <label for="san-francisco">San Francisco</label><br>
+
+                        <input type="checkbox" id="london">
+                        <label for="london">London</label><br>
+
+                        <input type="checkbox" id="berlin">
+                        <label for="berlin">Berlin</label><br>
+
+                        <input type="checkbox" id="tokyo">
+                        <label for="tokyo">Tokyo</label>
+
+                    </div>
+
+                    <div class="filter-item">
+                        <h6>Experience Level</h6>
+
+                        <input type="checkbox" id="internship">
+                        <label for="internship">Internship</label><br>
+
+                        <input type="checkbox" id="entery-level">
+                        <label for="entery-level">Entry level</label><br>
+
+                        <input type="checkbox" id="mid-level">
+                        <label for="mid-level">Mid Level</label><br>
+
+                        <input type="checkbox" id="senior-level">
+                        <label for="senior-level">Senior Level</label><br>
+
+                        <input type="checkbox" id="lead">
+                        <label for="lead">Lead</label><br>
+
+                    </div>
+
+                </aside>
+
+                <!-- Jobs Section -->
+                <section class="jobs-section">
+
+                    <!-- Job Card 1 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Senior Frontend Developer</h3>
+                                    <p>TechCorp Inc.</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Remote</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                12LPA - 18LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 5+ years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Next.js</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>2 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 2 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Full Stack Engineer</h3>
+                                    <p>Startup xyz.</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Vishakapatnam,AndhraPradesh</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                16LPA - 22LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 6+ years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>5 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 3 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>UI/UX Designer</h3>
+                                    <p>DesignerStudio</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Chennai,Tamilnadu</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Contract</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                7LPA - 120LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 3+ years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">UI Design</span>
+                            <span class="tech-tag">User Research</span>
+                            <span class="tech-tag">Prototyping</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>1 week ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 4 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>DevOps Engineer</h3>
+                                    <p>CloudSystems</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Remote</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                7LPA - 10LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 4+ years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">CI/CD</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>4 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 5 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Backend Developer</h3>
+                                    <p>DataFlow</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Kochi,Kerala</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                8LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 3+ years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>5 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 6 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Mobile Developer</h3>
+                                    <p>AppMakers</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Goa</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                14LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 4+ years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">iOS</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>1 week ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 7 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Frontend Developer</h3>
+                                    <p>NextGen Tech</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Remote</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Internship</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                1000/day</span>
+                            <span><i class="fa-solid fa-briefcase"></i>
+                                Fresher</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>3 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 8 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Lead Full Stack Developer</h3>
+                                    <p>Enterprise Solutions</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Ahmadabad,Gujarat</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                6LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 2+
+                                years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Microservices</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>6 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 9 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Java Developer</h3>
+                                    <p>CodeBase</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Mumbai,Maharastra</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                12LPA - 16LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 2+
+                                years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>2 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 10 -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-tile-logo">
+                                <i class="fa-solid fa-building"></i>
+
+                                <div class="job-role">
+                                    <h3>Software Developer</h3>
+                                    <p>tcs</p>
+                                </div>
+                            </div>
+                            <span class="save-btn"><i
+                                    class="fa-regular fa-bookmark"></i></span>
+                        </div>
+
+                        <div class="job-details">
+                            <span><i
+                                    class="fa-solid fa-location-dot"></i>Coimbatore,Tamilnadu</span>
+                            <span><i class="fa-regular fa-clock"></i>
+                                Full-time</span>
+                            <span><i class="fa-solid fa-dollar-sign"></i>
+                                14LPA</span>
+                            <span><i class="fa-solid fa-briefcase"></i> 2+
+                                years
+                                experience</span>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="job-footer">
+                            <span>2 days ago</span>
+                            <button class="btn btn-primary">Apply Now</button>
+                        </div>
+                    </div>
+
+                </section>
+            </section>
+        </main>
+    </body>
+</html>
